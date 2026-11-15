@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Substitua pelo seu domínio final após publicar (ex: Vercel, Netlify ou Cloudflare Pages)
-# Sitemap: https://SEU-DOMINIO.com.br/sitemap.xml
+Sitemap: https://guiamobile.vercel.app/sitemap.xml
