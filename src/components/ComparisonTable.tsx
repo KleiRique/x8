@@ -143,10 +143,17 @@ export const ComparisonTable: React.FC = () => {
                       }`}
                     >
                       <div className="flex items-center gap-3.5">
-                        {/* Miniatura da foto do modelo */}
-                        <div className="shrink-0">
+                        {/* Miniatura da foto do modelo com link direto */}
+                        <a
+                          href={phone.affiliateUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={`Ver ${phone.name} no Mercado Livre`}
+                          aria-label={`Ver ${phone.name} no Mercado Livre`}
+                          className="shrink-0 transition-transform duration-150 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-700 rounded-lg"
+                        >
                           <PhoneShowcaseImage phone={phone} variant="thumb" />
-                        </div>
+                        </a>
                         <div className="min-w-0">
                           {featured ? (
                             <span className="block text-[11px] font-bold text-rose-700">

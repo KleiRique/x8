@@ -59,10 +59,26 @@ export const QuickSummaryGrid: React.FC = () => {
                       {phone.name}
                     </h3>
 
-                    {/* Espaço enquadrado para foto do aparelho (trocar em src/data/smartphones.ts) */}
-                    <div className="mt-4" data-image-slot={phone.id}>
+                    {/* Imagem clicável que direciona direto para o Mercado Livre */}
+                    <a
+                      href={phone.affiliateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`Ver ${phone.name} no Mercado Livre`}
+                      aria-label={`Ver ${phone.name} no Mercado Livre`}
+                      className="group/img relative mt-4 block overflow-hidden rounded-xl cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-700"
+                      data-image-slot={phone.id}
+                    >
                       <PhoneShowcaseImage phone={phone} variant="card" />
-                    </div>
+
+                      {/* Feedback visual ao passar o mouse */}
+                      <div className="pointer-events-none absolute inset-0 flex items-end justify-center p-3 opacity-0 transition-opacity duration-200 group-hover/img:opacity-100 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent">
+                        <span className="inline-flex items-center gap-1.5 rounded-lg bg-white/95 px-3 py-1.5 text-xs font-semibold text-slate-950 shadow-md backdrop-blur-sm transition-transform duration-150 group-hover/img:translate-y-0 translate-y-1">
+                          <span>Ver no Mercado Livre</span>
+                          <ArrowUpRight className="h-3.5 w-3.5 text-rose-700" aria-hidden="true" />
+                        </span>
+                      </div>
+                    </a>
 
                     <p className="mt-4 text-sm leading-relaxed text-slate-600">
                       {phone.shortVerdict}

@@ -86,10 +86,10 @@ export const PhoneShowcaseImage: React.FC<PhoneShowcaseImageProps> = ({
         loading={isThumb ? 'lazy' : 'eager'}
         referrerPolicy="no-referrer"
         onError={() => setHasError(true)}
-        className={`h-full w-full transition-transform duration-200 ${
+        className={`h-full w-full transition-transform duration-300 ease-out ${
           isThumb
             ? phone.imageCropClass ?? 'object-contain'
-            : `${phone.imageCropClass ?? 'object-contain'} group-hover:scale-[1.03]`
+            : `${phone.imageCropClass ?? 'object-contain'} group-hover/img:scale-[1.06] group-hover:scale-[1.03]`
         }`}
       />
     </div>
